@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Comparisons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Algorithm Comparison Dashboard</h1>
+        <div class="graphs">
+            <div>
+                <h2>Raw Algorithm Comparison</h2>
+                <img src="{{ raw_plot }}" alt="Raw Algorithm Comparison">
+            </div>
+            <div>
+                <h2>Scaled Algorithm Comparison</h2>
+                <img src="{{ scaled_plot }}" alt="Scaled Algorithm Comparison">
+            </div>
+            <div>
+                <h2>Ensemble Algorithm Comparison</h2>
+                <img src="{{ ensemble_plot }}" alt="Ensemble Algorithm Comparison">
+            </div>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
