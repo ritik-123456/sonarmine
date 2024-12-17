@@ -155,4 +155,4 @@ if __name__ == '__main__':
     ngrok.set_auth_token("2qJAHcy11KusztAt4QsfrkB9NQH_5gHYmTMYvZPk8P4NKxSdp")
     public_url = ngrok.connect(5000)
     print(" * Tunnel URL:", public_url)
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
