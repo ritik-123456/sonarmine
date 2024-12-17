@@ -3,11 +3,11 @@ from flask import Flask, render_template, request, jsonify, url_for
 import numpy as np
 from matplotlib import pyplot
 import os
-from flask_ngrok import run_with_ngrok
+
 from pyngrok import ngrok
 
 app = Flask(__name__)
-run_with_ngrok(app)
+
 # Directory to save graphs
 graph_dir = "static/graphs"
 os.makedirs(graph_dir, exist_ok=True)
@@ -152,7 +152,5 @@ def result():
 
 if __name__ == '__main__':
     # Authenticate ngrok
-    ngrok.set_auth_token("2qJAHcy11KusztAt4QsfrkB9NQH_5gHYmTMYvZPk8P4NKxSdp")
-    public_url = ngrok.connect(5000)
-    print(" * Tunnel URL:", public_url)
+
     app.run(host='0.0.0.0', port=5000)
