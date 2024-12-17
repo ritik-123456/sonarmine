@@ -1,1 +1,5 @@
-
+scikit-learn
+flask
+pyngrok
+matplotlib
+pandas
