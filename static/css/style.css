@@ -2,15 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; 
+    background-size: cover; /* This will make the background cover the entire page */
+    background-position: center; /* This will center the background image */
     color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
 }
 
 .container {
     width: 90%;
     margin: 20px auto;
     padding: 20px;
-    background: #fff;
+    background: linear-gradient(to right, #042d6b, #1c55aa);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     text-align: center;
