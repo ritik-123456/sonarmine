@@ -92,25 +92,25 @@ def create_algorithm_comparison_plots():
 # Create and save plots before starting Flask
 raw_plot, scaled_plot, ensemble_plot = create_algorithm_comparison_plots()
 
-ilename = 'sonar.all-data.csv'
+# Load and prepare the dataset
+filename = 'sonar.all-data.csv'
 dataset = read_csv(filename, header=None)
+array = dataset.values
+X = array[:, 55:60].astype(float)  # Use all 60 features
+Y = array[:, 60]
 
 # Split dataset into features (X) and target (Y)
-X = dataset.iloc[:, :5].values  # Only first 5 columns
-Y = dataset.iloc[:, -1].values  # 60th column (Rock/Mine)
+validation_size = 0.20
+seed = 7
+X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=validation_size, random_state=seed)
 
-# Scale the data
-scaler = StandardScaler().fit(X)
-X_scaled = scaler.transform(X)
-
-# Train the SVM model
-model = SVC(probability=True, random_state=42)
-model.fit(X_scaled, Y)
+# Train the Random Forest model
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, Y_train)
 
 # Example: Predict with new data (5 features)
 new_data = [[0.1, 0.5, -0.3, 0.2, -0.1]]  # Example input with 5 features
-new_data_scaled = scaler.transform(new_data)  # Scale the input data
-prediction = model.predict(new_data_scaled)
+prediction = model.predict(new_data)
 print(f"Prediction: {prediction}")
 @app.route('/')
 def index():
