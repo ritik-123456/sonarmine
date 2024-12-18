@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Algorithm Dashboard</title>
+    <title>sonar</title>
+    <style>
+        html, body {
+            height: 100%; /* Set height to 100% for both html and body */
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='underwater-sea-mine-danger-weapon-deadly-naval-ocean-sea_bpocqo-8__F0000.png') }}");
+            background-size: 100% 100%; /* Stretch the image to cover the entire page */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image */
+            color: #333;
+        }
+        .container {
+            min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+    </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the ML Algorithm Dashboard</h1>
+        <h1>Sonar: Rock vs Mine</h1>
         <p>Select an option below:</p>
         <div class="options">
             <a href="{{ url_for('dashboard') }}" class="btn">View Algorithm Comparisons</a>
