@@ -2,26 +2,70 @@
 <html>
 <head>
     <title>Predict</title>
+    <style>
+        html, body {
+            height: 100%; /* Set height to 100% for both html and body */
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='underwater-sea-mine-danger-weapon-deadly-naval-ocean-sea_bpocqo-8__F0000.png') }}");
+            background-size: 100% 100%; /* Stretch the image to cover the entire page */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image */
+            color: #ffffff; /* Change font color to white for better visibility */
+        }
+        .container {
+            min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text */
+        }
+        label {
+            font-size: 1.2em; /* Increase label font size for better visibility */
+        }
+        input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF; /* Button background color */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter 5 Inputs for Prediction</h1>
-    <form action="/result" method="POST">
-        <label for="input1">Input 1:</label>
-        <input type="number" name="input1" step="any" required><br><br>
+    <div class="container">
+        <h1>Enter 5 Inputs for Prediction</h1>
+        <form action="/result" method="POST">
+            <label for="input1">Input 1:</label>
+            <input type="number" name="input1" step="any" required><br>
 
-        <label for="input2">Input 2:</label>
-        <input type="number" name="input2" step="any" required><br><br>
+            <label for="input2">Input 2:</label>
+            <input type="number" name="input2" step="any" required><br>
 
-        <label for="input3">Input 3:</label>
-        <input type="number" name="input3" step="any" required><br><br>
+            <label for="input3">Input 3:</label>
+            <input type="number" name="input3" step="any" required><br>
 
-        <label for="input4">Input 4:</label>
-        <input type="number" name="input4" step="any" required><br><br>
+            <label for="input4">Input 4:</label>
+            <input type="number" name="input4" step="any" required><br>
 
-        <label for="input5">Input 5:</label>
-        <input type="number" name="input5" step="any" required><br><br>
+            <label for="input5">Input 5:</label>
+            <input type="number" name="input5" step="any" required><br>
 
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
