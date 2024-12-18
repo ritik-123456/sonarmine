@@ -2,14 +2,36 @@
 <html>
 <head>
     <title>Prediction Result</title>
+    <style>
+        html, body {
+            height: 100%; /* Set height to 100% for both html and body */
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='underwater-sea-mine-danger-weapon-deadly-naval-ocean-sea_bpocqo-8__F0000.png') }}");
+            background-size: 100% 100%; /* Stretch the image to cover the entire page */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image */
+            color: #ffffff; /* Change font color to white for better visibility */
+        }
+        .container {
+            min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text */
+        }
+    </style>
 </head>
 <body>
-    <h1>Prediction Result</h1>
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% else %}
-        <p>The prediction is: <strong>{{ prediction }}</strong></p>
-    {% endif %}
-    <a href="/predict">Go back</a>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% else %}
+            <p>The prediction is: <strong>{{ prediction }}</strong></p>
+        {% endif %}
+        <a href="/predict" style="color: #007BFF;">Go back</a>
+    </div>
 </body>
 </html>
