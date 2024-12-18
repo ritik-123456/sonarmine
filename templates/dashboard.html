@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Comparisons</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        html, body {
+            height: 100%; /* Set height to 100% for both html and body */
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='underwater-sea-mine-danger-weapon-deadly-naval-ocean-sea_bpocqo-8__F0000.png') }}");
+            background-size: 100% 100%; /* Stretch the image to cover the entire page */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed;
+            color: #ffffff; /* Change font color to white for better visibility */
+        }
+        .container {
+            min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text */
+        }
+        .graphs img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            background: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
